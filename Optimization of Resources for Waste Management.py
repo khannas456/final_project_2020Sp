@@ -32,3 +32,48 @@ def triangular(no_of_residents):
     trash_weekly= [x*7 for x in trash_residents]
     complete_trash=sum(trash_weekly)
     return(complete_trash)
+
+
+def stimulate(N, No_bins, bin_size, persons, collect):
+    output_data = []
+    for i in range(N):
+        per_stimulation = []
+        total_trash = 0
+
+        capacity = bin_size * No_bins
+
+        if collect == 1:
+            total_trash = triangular(persons)
+        if collect == 2:
+            total_trash = triangular(persons)
+            total_trash = total_trash / 2
+
+        per_stimulation.append(persons)
+        per_stimulation.append(No_bins)
+        per_stimulation.append(capacity)
+        per_stimulation.append(total_trash)
+
+        value = threshold(total_trash, capacity)
+
+        if value[2] == 1:
+            per_stimulation.append(value[0])
+            per_stimulation.append(0)
+            per_stimulation.append("No")
+            per_stimulation.append(value[1])
+
+
+        elif value[2] == 2:
+            per_stimulation.append(0)
+            per_stimulation.append(value[0])
+            per_stimulation.append("No")
+            per_stimulation.append(value[1])
+
+        elif value[2] == 3:
+            per_stimulation.append(0)
+            per_stimulation.append(0)
+            per_stimulation.append(value[0])
+            per_stimulation.append(value[1])
+
+        output_data.append(per_stimulation)
+
+    conclusions(output_data)
