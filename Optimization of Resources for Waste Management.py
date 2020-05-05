@@ -24,3 +24,11 @@ def scenario_main():
     elif collections > 2:
         print("Not a viable scenario")
 
+
+def triangular(no_of_residents):
+    wt=175
+    triangular_values=list(np.random.triangular(1.5, 4.7, 8.1, no_of_residents))
+    trash_residents= [x / wt for x in triangular_values]
+    trash_weekly= [x*7 for x in trash_residents]
+    complete_trash=sum(trash_weekly)
+    return(complete_trash)
