@@ -77,3 +77,19 @@ def stimulate(N, No_bins, bin_size, persons, collect):
         output_data.append(per_stimulation)
 
     conclusions(output_data)
+
+
+def threshold(trash, cap):
+    if trash < cap:
+        Underfull = 100 - (trash / cap * 100)
+        Underfull = round(Underfull, 3)
+        return ([Underfull, "Underfull", 1])
+
+    elif trash > cap:
+        overfull = (trash - cap) / cap * 100
+        overfull = round(overfull, 3)
+        return ([overfull, "Overfull", 2])
+
+    elif int(trash) == cap:
+        full = "YES"
+        return ([full, "Full", 3])
