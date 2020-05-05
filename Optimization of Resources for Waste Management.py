@@ -93,3 +93,38 @@ def threshold(trash, cap):
     elif int(trash) == cap:
         full = "YES"
         return ([full, "Full", 3])
+
+
+def conclusions(data):
+    final_data = pd.DataFrame(data)
+    final_data = final_data.rename(
+        columns={0: 'Number of Residents', 1: "Number of Bins", 2: "Trash Capacity", 3: "Total Trash per week",
+                 4: "Percent Empty", 5: "Percent Over Fill", 6: "Is Full?", 7: "Status of Bins"})
+    report = final_data.describe()
+    display(final_data)
+    display(report)
+
+    final_data["Clean"] = final_data["Status of Bins"] == 'Underfull'
+    values = []
+    for i in range(len(final_data)):
+        if final_data["Percent Empty"][i] != 0.0:
+            values.append(final_data["Percent Empty"][i])
+        elif final_data["Percent Over Fill"][i] != 0.0:
+            values.append(-(final_data["Percent Over Fill"][i]))
+        else:
+            values.append(0)
+
+    final_data["Percentage Clean"] = values
+
+    fig = plt.figure(figsize=(10, 18))
+    final_data["Percentage Clean"].plot(kind='barh', color=final_data.Clean.map({True: 'g', False: 'r'}))
+    plt.title("The Percentage of Status and Cleanliness of the Bins")
+    plt.show()
+
+    plt.hist(final_data["Total Trash per week"], bins="auto")
+    plt.title("Histogram for Total Trash")
+    plt.show()
+
+    final_data["Status of Bins"].value_counts().plot(kind="bar")
+    plt.title("Number of Bins under each Status")
+    plt.show()
