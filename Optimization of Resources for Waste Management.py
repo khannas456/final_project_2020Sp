@@ -128,3 +128,15 @@ def conclusions(data):
     final_data["Status of Bins"].value_counts().plot(kind="bar")
     plt.title("Number of Bins under each Status")
     plt.show()
+
+
+
+scenario_main()
+
+
+# View of triangular distributions
+def triangular_stimulations(no_of_residents):
+    plt.hist(np.random.triangular(1.5, 4.7, 8.1, no_of_residents), bins=200)
+    plt.show()
+
+triangular_stimulations(20000)
