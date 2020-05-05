@@ -140,3 +140,6 @@ def triangular_stimulations(no_of_residents):
     plt.show()
 
 triangular_stimulations(20000)
+
+
+#I am yet to upload the doctest and docstrings i.e. the final version
