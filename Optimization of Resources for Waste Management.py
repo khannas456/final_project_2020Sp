@@ -7,8 +7,13 @@ import math
 
 
 def scenario_main():
+    '''
+    For this mc stimulation we are using fixed residents in the complex "250" along with that the trash bin size is 4 cubic yards.
+    This will also ask for the input for number of collections
+    :return:Output
+    '''
     residents = 250
-    trash_bin_size = 4  # 5 cubic yard trash
+    trash_bin_size = 4  # 4 cubic yard trash
     print('Number of residents in Apartment Complex: ', residents)
     mc_stimulation = int(input('Number of MC stimulations:'))
     collections = int(input('Number of trash collection (suggestion 1 or 2):'))
@@ -26,6 +31,10 @@ def scenario_main():
 
 
 def triangular(no_of_residents):
+    '''
+    :param no_of_residents:
+    :return:
+    '''
     wt=175
     triangular_values=list(np.random.triangular(1.5, 4.7, 8.1, no_of_residents))
     trash_residents= [x / wt for x in triangular_values]
@@ -35,6 +44,15 @@ def triangular(no_of_residents):
 
 
 def stimulate(N, No_bins, bin_size, persons, collect):
+    '''
+
+    :param N:
+    :param No_bins:
+    :param bin_size:
+    :param persons:
+    :param collect:
+    :return:
+    '''
     output_data = []
     for i in range(N):
         per_stimulation = []
@@ -80,6 +98,12 @@ def stimulate(N, No_bins, bin_size, persons, collect):
 
 
 def threshold(trash, cap):
+    '''
+
+    :param trash:
+    :param cap:
+    :return:
+    '''
     if trash < cap:
         Underfull = 100 - (trash / cap * 100)
         Underfull = round(Underfull, 3)
@@ -96,6 +120,11 @@ def threshold(trash, cap):
 
 
 def conclusions(data):
+    '''
+
+    :param data:
+    :return:
+    '''
     final_data = pd.DataFrame(data)
     final_data = final_data.rename(
         columns={0: 'Number of Residents', 1: "Number of Bins", 2: "Trash Capacity", 3: "Total Trash per week",
@@ -136,6 +165,10 @@ scenario_main()
 
 # View of triangular distributions
 def triangular_stimulations(no_of_residents):
+    '''
+    :param no_of_residents:
+    :return:
+    '''
     plt.hist(np.random.triangular(1.5, 4.7, 8.1, no_of_residents), bins=200)
     plt.show()
 
