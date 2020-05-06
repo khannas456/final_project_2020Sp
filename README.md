@@ -1,4 +1,4 @@
-Optimization of Resources for Waste Management
+###### **Optimization of Resources for Waste Management**
 
 Spring 2020 [IS 590: Progr Analytics & Data Process]
 

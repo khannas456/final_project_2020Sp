@@ -99,7 +99,6 @@ def stimulate(N, No_bins, bin_size, persons, collect):
 
 def threshold(trash, cap):
     '''
-
     :param trash:
     :param cap:
     :return:
@@ -121,7 +120,6 @@ def threshold(trash, cap):
 
 def conclusions(data):
     '''
-
     :param data:
     :return:
     '''
