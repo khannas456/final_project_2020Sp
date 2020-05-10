@@ -1,3 +1,7 @@
+'''
+Libraries Used for the project
+'''
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,18 +10,12 @@ import math
 %matplotlib inline
 
 
-def scenario_main():
+def scenario_main(residents, trash_bin_size, mc_stimulation, collections):
     '''
     For this mc stimulation we are using fixed residents in the complex "250" along with that the trash bin size is 4 cubic yards.
     This will also ask for the input for number of collections
     :return:Output
     '''
-    residents = 250
-    trash_bin_size = 4  # 4 cubic yard trash
-    print('Number of residents in Apartment Complex: ', residents)
-    mc_stimulation = int(input('Number of MC stimulations:'))
-    collections = int(input('Number of trash collection (suggestion 1 or 2):'))
-
     if collections == 1:
         bins = 11
         stimulate(mc_stimulation, bins, trash_bin_size, residents, collections)
@@ -158,9 +156,6 @@ def conclusions(data):
 
 
 
-scenario_main()
-
-
 # View of triangular distributions
 def triangular_stimulations(no_of_residents):
     '''
@@ -174,3 +169,12 @@ triangular_stimulations(20000)
 
 
 #I am yet to upload the doctest and docstrings i.e. the final version
+
+if __name__ == '__main__':
+    total_residents = 250
+    trash_size = 4  # 4 cubic yard trash
+    print('Number of residents in Apartment Complex: ', residents)
+    stimulations = int(input('Number of MC stimulations:'))
+    collect = int(input('Number of trash collection (suggestion 1 or 2):'))
+
+    scenario_main(total_residents, trash_size, stimulations, collect)
