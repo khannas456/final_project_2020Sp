@@ -11,7 +11,7 @@ Thanks to the technology, many forward-looking waste management companies are no
 As a result, the companies are saving money on operational waste collection costs while leaving a lighter ecological footprint.
 
 "People should only buy what they need, otherwise they will only be throwing a lot of it away when it all goes out of date"
-
+![](myplot.png)
 ### **Project Description**
 
 The project illustrates on optimizing the resources for waste management. Here we create a apartment complex scenario and see how we can increase sanitation and reduce the investment cost by a subtitute of small labor
