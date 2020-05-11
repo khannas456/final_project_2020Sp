@@ -43,13 +43,13 @@ def triangular(no_of_residents):
 
 def stimulate(N, No_bins, bin_size, persons, collect):
     '''
-
-    :param N:
-    :param No_bins:
-    :param bin_size:
-    :param persons:
-    :param collect:
-    :return:
+    This will apply the monte carlo stimulation. We check the number of collection over which we see how much trash is produced and create output for each simulation and a end result for all stimulations.
+    :param N:Input the number of stimulations
+    :param No_bins:Number of dustbins required in the apartment complex
+    :param bin_size:The Dustbin size as required for the apartment complex
+    :param persons:The number of residents in the apartment complex
+    :param collect:Number of weekly collections, 1 or 2
+    :return:This will produce results for all the stimulations
     '''
     output_data = []
     for i in range(N):
