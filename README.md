@@ -19,6 +19,7 @@ This project will help in analyzing with given scenarios to understand how we ca
 The project illustrates optimizing the resources for waste management. Here we create an apartment complex scenario and see how we can increase sanitation and reduce the investment cost by a substitute of small labor
 
 Hypothesis: If we change from emptying the bins once per week to TWICE per week, we should be able to contain the garbage better (fewer overflows) even while reducing the NUMBER of bins by 40%
+![](Images/myplot4.png)
 ![](Images/myplot3.png)
 ![](Images/myplot2.png)
 #### **References**
