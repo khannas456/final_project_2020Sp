@@ -107,7 +107,7 @@ def threshold(trash, cap):
     '''
     :param trash:Total trash produced by 250 residents in the apartment complex
     :param cap: Total capacity of all the trash bins available
-    :return:
+    :return:This returns a list which contains the percentage and status of bin
     >>>threshold(48, 44)
     [9.091, 'Overfull', 2]
     '''
@@ -128,8 +128,9 @@ def threshold(trash, cap):
 
 def conclusions(data):
     '''
-    :param data:
-    :return:
+    This function generates visual reports and graphs to better understand the stimulation we ran for the given scenarios
+    :param data:The compiled output generated after mc stimulation
+    :return:Displays the Dataframe, report, The Positve and negative hrizontal bar chart, histogram and vertical bar chart
     '''
     final_data = pd.DataFrame(data)
     final_data = final_data.rename(
@@ -170,21 +171,6 @@ def conclusions(data):
 
 
 
-# View of triangular distributions
-def triangular_stimulations(no_of_residents):
-    '''
-    :param no_of_residents:
-    :return:
-    '''
-    plt.hist(np.random.triangular(1.5, 4.7, 8.1, no_of_residents), bins=200)
-    plt.title("The Triangular Distribution Graph")
-    plt.show()
-
-triangular_stimulations(20000)
-
-
-#I am yet to upload the doctest and docstrings i.e. the final version
-
 if __name__ == '__main__':
     total_residents = 250
     trash_size = 4  # 4 cubic yard trash
@@ -193,3 +179,17 @@ if __name__ == '__main__':
     collect = int(input('Number of trash collection (suggestion 1 or 2):'))
 
     scenario_main(total_residents, trash_size, stimulations, collect)
+
+
+# View of triangular distributions as an example to illustrate how we are using it
+def triangular_stimulations(no_of_residents):
+    '''
+    This function produces a histogram to show triangular distribution with similar scenarios used in our program above
+    :param no_of_residents: This is the total number of residents in an apartment complex
+    :return:This will return a Histogram
+    '''
+    plt.hist(np.random.triangular(1.5, 4.7, 8.1, no_of_residents), bins=200)
+    plt.title("The Triangular Distribution Graph")
+    plt.show()
+
+triangular_stimulations(20000)
