@@ -29,8 +29,9 @@ def scenario_main(residents, trash_bin_size, mc_stimulation, collections):
 
 def triangular(no_of_residents):
     '''
-    :param no_of_residents:
-    :return:
+    This will generate the amount of trash produced by a person through triangular distribution and produce the total trash for total number of residents weekly
+    :param no_of_residents: The total number of residents in an apartment complex
+    :return:The amount of trash produced weekly by all residents
     '''
     wt=175
     triangular_values=list(np.random.triangular(1.5, 4.7, 8.1, no_of_residents))
