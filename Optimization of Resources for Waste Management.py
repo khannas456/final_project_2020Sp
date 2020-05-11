@@ -105,9 +105,11 @@ def stimulate(N, No_bins, bin_size, persons, collect):
 
 def threshold(trash, cap):
     '''
-    :param trash:
-    :param cap:
+    :param trash:Total trash produced by 250 residents in the apartment complex
+    :param cap: Total capacity of all the trash bins available
     :return:
+    >>>threshold(48, 44)
+    [9.091, 'Overfull', 2]
     '''
     if trash < cap:
         Underfull = 100 - (trash / cap * 100)
