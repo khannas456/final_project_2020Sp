@@ -1,20 +1,19 @@
 '''
 Libraries Used for the project
 '''
-
+import matplotlib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import random
 import math
-%matplotlib inline
 
 
 def scenario_main(residents, trash_bin_size, mc_stimulation, collections):
     '''
     For this mc stimulation we are using fixed residents in the complex "250" along with that the trash bin size is 4 cubic yards.
     This will also ask for the input for number of collections
-    :return:Output
+    :return:This will return the stimulations, number of residents, trash bin size and the number of collections each week
     '''
     if collections == 1:
         bins = 11
@@ -144,9 +143,13 @@ def conclusions(data):
     fig = plt.figure(figsize=(10, 18))
     final_data["Percentage Clean"].plot(kind='barh', color=final_data.Clean.map({True: 'g', False: 'r'}))
     plt.title("The Percentage of Status and Cleanliness of the Bins")
+    plt.xlabel('Percentage Empty or Overfull')
+    plt.ylabel('Number of Stimulations')
     plt.show()
 
     plt.hist(final_data["Total Trash per week"], bins="auto")
+    plt.ylabel('Number of Bins')
+    plt.xlabel('Status of Bins')
     plt.title("Histogram for Total Trash")
     plt.show()
 
@@ -163,6 +166,7 @@ def triangular_stimulations(no_of_residents):
     :return:
     '''
     plt.hist(np.random.triangular(1.5, 4.7, 8.1, no_of_residents), bins=200)
+    plt.title("The Triangular Distribution Graph")
     plt.show()
 
 triangular_stimulations(20000)
@@ -173,7 +177,7 @@ triangular_stimulations(20000)
 if __name__ == '__main__':
     total_residents = 250
     trash_size = 4  # 4 cubic yard trash
-    print('Number of residents in Apartment Complex: ', residents)
+    print('Number of residents in Apartment Complex: ', total_residents)
     stimulations = int(input('Number of MC stimulations:'))
     collect = int(input('Number of trash collection (suggestion 1 or 2):'))
 
