@@ -1,7 +1,6 @@
 '''
 Libraries Used for the project
 '''
-import matplotlib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,6 +13,8 @@ def scenario_main(residents, trash_bin_size, mc_stimulation, collections):
     For this mc stimulation we are using fixed residents in the complex "250" along with that the trash bin size is 4 cubic yards.
     This will also ask for the input for number of collections
     :return:This will return the stimulations, number of residents, trash bin size and the number of collections each week
+    >>>scenario_main(250, 4, 1000, 7)
+    Not a viable scenario
     '''
     if collections == 1:
         bins = 11
@@ -32,6 +33,12 @@ def triangular(no_of_residents):
     This will generate the amount of trash produced by a person through triangular distribution and produce the total trash for total number of residents weekly
     :param no_of_residents: The total number of residents in an apartment complex
     :return:The amount of trash produced weekly by all residents
+    >>>triangular(250)
+    >>>if complete_trash >= 42 and complete_trash <= 53
+    ...print(True)
+    >>>else:
+    ...print(False)
+    True
     '''
     wt=175
     triangular_values=list(np.random.triangular(1.5, 4.7, 8.1, no_of_residents))
@@ -48,8 +55,9 @@ def stimulate(N, No_bins, bin_size, persons, collect):
     :param No_bins:Number of dustbins required in the apartment complex
     :param bin_size:The Dustbin size as required for the apartment complex
     :param persons:The number of residents in the apartment complex
-    :param collect:Number of weekly collections, 1 or 2
+    :param collect:Input of Number of weekly collections, 1 or 2
     :return:This will produce results for all the stimulations
+    >>>
     '''
     output_data = []
     for i in range(N):
