@@ -17,6 +17,8 @@ As a result, the companies are saving money on operational waste collection cost
 The project illustrates on optimizing the resources for waste management. Here we create a apartment complex scenario and see how we can increase sanitation and reduce the investment cost by a subtitute of small labor
 
 Hypothesis: If we change from emptying the bins once per week to TWICE per week, we should be able to contain the garbage better (less overflows) even while reducing the NUMBER of bins by 40%
+![](myplot3.png)
+![](myplot2.png)
 #### **References**
 http://www.zendergroup.org/docs/container.pdf
 https://docs.scipy.org/doc/numpy-1.14.1/reference/generated/numpy.random.triangular.html
